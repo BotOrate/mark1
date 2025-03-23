@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    environment {
-        PYTHON_HOME = '/usr/bin/python3'  // Make sure this is the path to your Python installation
-    }
     stages {
         stage('Checkout') {
             steps {
