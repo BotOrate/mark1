@@ -7,12 +7,12 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/BotOrate/mark1.git'  
             }
         }
-        stage('Install Dependencies') {
-            steps {
-                // Install dependencies if needed (optional if you have a requirements.txt)
-                // sh 'pip install -r requirements.txt'  // Uncomment if using dependencies
-            }
-        }
+        // stage('Install Dependencies') {
+        //     steps {
+        //         // Install dependencies if needed (optional if you have a requirements.txt)
+        //         // sh 'pip install -r requirements.txt'  // Uncomment if using dependencies
+        //     }
+        // }
         stage('Run Tests') {
             steps {
                 sh 'python3 test.py'
