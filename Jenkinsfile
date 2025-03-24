@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     environment {
-        // Define environment variables (adjust these as needed)
         GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-service-account-key')  // GCP service account credentials (Jenkins secret)
         BUCKET_NAME = 'your-bucket-name'
     }
