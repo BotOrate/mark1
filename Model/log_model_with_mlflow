@@ -1,0 +1,9 @@
+import mlflow
+from sentence_transformers import SentenceTransformer
+
+def log_model_with_mlflow():
+    model = SentenceTransformer('all-MiniLM-L6-v2')
+    with mlflow.start_run():
+        mlflow.log_param("model_type", "SentenceTransformer")
+        mlflow.sklearn.log_model(model, "model")
+    print("Model logged to MLflow.")
