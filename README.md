@@ -215,3 +215,21 @@ This module showcases the real-world utility of cleaned and structured review da
 
 <img width="490" alt="Screenshot 2025-03-23 at 5 47 38 PM" src="https://github.com/user-attachments/assets/ade0af41-2898-46c6-93cd-76f1e7836b62" />
 
+Prerequisites
+OpenAI API Key
+Google Cloud Account with billing enabled
+Python 3.10+
+Google Cloud SDK
+
+API Keys and Configuration
+Required API Keys
+Create a .env file in the project root with the following variables:
+OPENAI_API_KEY="your-openai-api-key"
+GOOGLE_APPLICATION_CREDENTIALS="path/to/your/service-account-key.json"
+Set up environment variables:
+export GOOGLE_APPLICATION_CREDENTIALS="path_to_service_account_json"
+export OPEN_AI_API_KEY="api_key"
+For OpenAI API:
+Visit the OpenAI API Key
+Create an API key and add it to your .env file as OPENAI_API_KEY
+
