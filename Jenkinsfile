@@ -1,31 +1,89 @@
 pipeline {
     agent any
+
+    environment {
+        GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-service-account-key')  // GCP service account credentials (Jenkins secret)
+        BUCKET_NAME = 'your-bucket-name'
+    }
+
     stages {
-        stage('Checkout') {
+        stage('Setup') {
             steps {
-                // Checkout the source code from the Git repository
-                git branch: 'main', url: 'https://github.com/BotOrate/mark1.git'  
+                script {
+                    echo 'Setting up environment...'
+                    sh '''
+                    python3 -m venv venv
+                    source venv/bin/activate
+                    pip install --upgrade pip
+                    pip install -r requirements.txt
+                    '''
+                }
             }
         }
-        // stage('Install Dependencies') {
-        //     steps {
-        //         // Install dependencies if needed (optional if you have a requirements.txt)
-        //         // sh 'pip install -r requirements.txt'  // Uncomment if using dependencies
-        //     }
-        // }
-        stage('Run Tests') {
+
+        stage('Run Model Validation') {
             steps {
-                bat 'python test.py'
+                script {
+                    echo 'Running model validation...'
+                    sh '''
+                    source venv/bin/activate
+                    python model_validation.py
+                    '''
+                }
+            }
+        }
+
+        stage('Run Bias Checking') {
+            steps {
+                script {
+                    echo 'Checking bias...'
+                    sh '''
+                    source venv/bin/activate
+                    python bias_checking.py
+                    '''
+                }
+            }
+        }
+
+        stage('Run Model Selection') {
+            steps {
+                script {
+                    echo 'Selecting best model based on validation and bias results...'
+                    sh '''
+                    source venv/bin/activate
+                    python model_selection.py
+                    '''
+                }
+            }
+        }
+
+        stage('Push Model to Registry') {
+            steps {
+                script {
+                    echo 'Pushing model to registry...'
+                    sh '''
+                    source venv/bin/activate
+                    python model_registry.py
+                    '''
+                }
             }
         }
     }
+
     post {
-        success {
-            echo 'Python script ran successfully.'
+        always {
+            echo 'Cleaning up...'
+            sh '''
+            rm -rf venv
+            '''
         }
+
+        success {
+            echo 'Pipeline ran successfully!'
+        }
+
         failure {
-            echo 'Python script failed.'
+            echo 'Pipeline failed. Please check the logs.'
         }
     }
 }
-//push
