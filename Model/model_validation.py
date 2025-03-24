@@ -1,11 +1,16 @@
+import mlflow
 import faiss
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
 def validate_model_rag(model_name, reviews_df, query, top_k=5):
-    retrieved_reviews = retrieve_reviews(query, reviews_df, top_k)
-    accuracy = evaluate_retrieval_accuracy(retrieved_reviews, query)
-    print(f"Model Validation Accuracy for Query: {accuracy:.4f}")
+    with mlflow.start_run():
+        mlflow.set_tag("model_name", model_name)
+        mlflow.log_param("query", query)
+        retrieved_reviews = retrieve_reviews(query, reviews_df, top_k)
+        accuracy = evaluate_retrieval_accuracy(retrieved_reviews, query)
+        mlflow.log_metric("retrieval_accuracy", accuracy)
+        print(f"Model Validation Accuracy for Query: {accuracy:.4f}")
     return accuracy, retrieved_reviews
 
 def retrieve_reviews(query, reviews_df, top_k=5):
