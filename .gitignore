@@ -1,0 +1,8 @@
+.env
+.venv
+logs
+**.pytest_cache
+cache
+verta-gcp.json
+**/__pycache__
+**/mlruns

@@ -1,0 +1,46 @@
+stages:
+  prepare_base_model:
+    cmd: python -m src.pipeline.stage_01_prepare_base_model
+    deps:
+      - src/pipeline/stage_01_prepare_base_model.py
+      - config/config.yaml
+
+
+  test_ingestion:
+    cmd: python -m src.pipeline.stage_02_test_data_ingestion
+    deps:
+      - src/pipeline/stage_02_test_data_ingestion.py
+      - config/config.yaml
+    metrics:
+    - artifact/product_uuids.json:
+        cache: false
+
+
+  evaluation:
+    cmd: python -m src.pipeline.stage_03_model_evaluation
+    deps:
+      - src/pipeline/stage_03_model_evaluation.py
+      - config/config.yaml
+      - evaluation/testset
+    metrics:
+    - evaluation/metrics/base-scores.json:
+        cache: false
+
+
+  bias_detection:
+    cmd: python -m src.pipeline.stage_04_bias_detection
+    deps:
+      - src/pipeline/stage_04_bias_detection.py
+      - config/config.yaml
+      - evaluation/results
+    metrics:
+    - evaluation/metrics/bias-scores.json:
+        cache: false
+
+
+  failure_detection:
+    cmd: python -m src.pipeline.stage_05_failure_detection
+    deps:
+      - src/pipeline/stage_05_failure_detection.py
+      - evaluation/metrics/bias-scores.json
+      - evaluation/metrics/base-scores.json

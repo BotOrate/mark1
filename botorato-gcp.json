@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "botorate-457400",
+  "private_key_id": "e11d73abf4eadb4b574e23c5b4286c711d8166e8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCtdyN+LHMqWYmR\nIOlYuFNK3YYYIVSzx5K+zR4MgHUIP4Vt62JX8E81K81PgqkudGRDW7c8MC/NppVI\np9e6lyK1y38zPDtWFsFFMfNuFmw+dAirDLCg7LLNf1WxtiDKRsnVWnXouzKuH56R\nx8zqA8gJWHuNzsy5cLbTM0zp5K/grs2XWJU+epGTFK1SfVwxEg1vpcDFkIFjEQOQ\ng8WcXAY0kuJP8R+5ac9DtK7jT0sREv/GWDt2M4bvjoVQN9vu0KMtbB6V4CXQ78y3\nWNWjg6RZWF+I/a6+zLwL5ra2lnhL98h0rXayUMQ+nwEg29Ao69m+V84CCbcyTULa\nJv8+669XAgMBAAECggEABzVpxK8NNCfXZzAScmzqjTRqg6sy7WuwRfyZMJTQCEE3\nhste4V+rsv54gELiS/trRT9U/IvWGLpA/u12shrgxuRHi3YH0zqL2pfKUXteETRa\nPd1/o5hij9aoVYPHlhBeB99EAiFxaDoJKW6/rcPtdrH2JH0BFf3Ao0NBAYFO68vW\nTg4YRakXgXWU9Rg9Dm07WjsNnj+mkqfOSvvDOptH8QUWfEWevsON3R6w2yVzPQHT\nB0zG2cU2jM+L30bz/3uehZpnY7nx6JZoIGi8ndb+1v+dotAN8dsKA3Vh7P1pr/4I\nCxSV5cwevw4kPMQqpogvayLtPsUT/NlvvRekCIoAUQKBgQDkZ4C24alSqrI0vemK\n1sKaBmWBztLtNwy4cQ2npTOi7rXRQGACZ6wX7aiE/Q7cDMzPK0mC10R8LFy2hurv\nB3SXVa6MFo7XKZDYTVIqMy8e2H9iUWuz8vzJiZa6b1bNCJ+tVd0rqNpio6kDSiL4\nD5LOOUIOZ210qKIWf/K9sSeq5wKBgQDCbGLz9TLkhm6OszOxJLSEnbXBizrkpr2o\n54c0WVYc11IXj0xmvdssEEv9XDxbC+HMTK68hGuy04p5+IzdQmJj/aDPWROV8n3c\nChF6FVSxTmws4U9z61mGFYVi70hw5mhpOJqHcNtscgkvtnF2IsNQG3J8wPpHhsMK\nRp39k8c6EQKBgG+CiLjAm2YcqDxPq8F48DE6hjxFuXzOr4ssxrneUcNuP54Vi8og\ny0gzY17qHWMZbLSIMa+LYYguMGV8oR5pyWZJEpqaOMqbJHg157NqocqxcB+UGL0W\nGIxcfBYxXXNkjnCVxxEVsukNdeqBO2lYURgVpEZcAHhADEJn3R73aqJpAoGAcSQV\n6ZYVSbuZdt1+BWYwzsPgU4MsgIcv86zYl3QtkpcTJLa1ZUyy0M+jCQu1693cRsGR\nJg+BhQ1pllU31EKfc0TTYhaaOTZmW7hYN01Wfd//P5bWX8Tj0g2QE+TfqSPMOv8/\nnfXlGxS5l9R57p+IPYPbehHrE9iug7pYkop+86ECgYBfgVVxHHGjXWCKvaxc8HIj\nq5e0nUsLasJHQ4HnTRHB3HumY/2RXsvr10grty7n3FpyjZOjmWKa6SfYVuhQefcc\n639cacaUq/i3A4qlyWT7Gv1g/pJ/Ot85dDLes1n4kUYl4p+RQ5/Wb/1ml+cpy3gp\ncj56qpoSpBH8qKg60m8Blw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "botoratedev@botorate-457400.iam.gserviceaccount.com",
+  "client_id": "111774336045568114683",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/botoratedev%40botorate-457400.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
